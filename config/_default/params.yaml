@@ -68,7 +68,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/Wi-sc/'
+    url: 'https://github.com/<username>/<repository>'
     content_dir: content
     branch: main
   avatar:
