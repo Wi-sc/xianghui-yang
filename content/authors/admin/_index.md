@@ -80,5 +80,5 @@ email: 'xianghui.yang@sydney.edu.au'
 highlight_name: true
 ---
 
-Xianghui Yang a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin and Prof. Wanli Ouyang. Before that, he received B.Sc. degree in Physiscs from the School of Physics, Nanjing University in 2019.
+Xianghui Yang a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of [Prof. Luping Zhou](https://www.sydney.edu.au/engineering/about/our-people/academic-staff/luping-zhou.html), [Prof. Guosheng Lin](https://guosheng.github.io/) and [Prof. Wanli Ouyang](https://wlouyang.github.io/). Before that, he received B.Sc. degree in Physiscs from the School of Physics, [Nanjing University](https://www.nju.edu.cn/EN/main.htm) in 2019.
 {style="text-align: justify;"}
