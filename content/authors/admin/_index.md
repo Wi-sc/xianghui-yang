@@ -77,7 +77,7 @@ social:
 email: 'xianghui.yang@sydney.edu.au'
 
 # Highlight the author in author lists? (true/false)
-highlight_name: true
+highlight_name: false
 ---
 
 Xianghui Yang a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin and Prof. Wanli Ouyang. Before that, he received B.Sc. degree in Physiscs from the School of Physics, Nanjing University in 2019.
