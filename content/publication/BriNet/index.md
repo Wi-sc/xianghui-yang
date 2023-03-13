@@ -1,17 +1,22 @@
 ---
-title: 'An example conference paper'
+title: 'BriNet: Towards Bridging the Intra-class and Inter-class Gaps in One-Shot Segmentation'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - admin
-  - Robert Ford
+  - Xianghui Yang
+  - Bairun Wang
+  - Kaige Chen
+  - Xinchi Zhou
+  - Shuai Yi
+  - Wanli Ouyang
+  - Luping Zhou
 
 # Author notes (optional)
 author_notes:
-  - 'Equal contribution'
-  - 'Equal contribution'
+  # - 'Equal contribution'
+  # - 'Equal contribution'
 
 date: '2013-07-01T00:00:00Z'
 doi: ''
@@ -27,12 +32,12 @@ publication_types: ['1']
 
 # Publication name and optional abbreviated publication name.
 publication: In *The British Machine Vision Conferenc 2020*
-publication_short: In *BMVC2020
+publication_short: In *BMVC2020*
 
 abstract: Few-shot segmentation focuses on the generalization of models to segment unseen object instances with limited training samples. Although tremendous improvements have been achieved, existing methods are still constrained by two factors. (1) The information interaction between query and support images is not adequate, leaving intra-class gap. (2) The object categories at the training and inference stages have no overlap, leaving the inter-class gap. Thus, we propose a framework, BriNet, to bridge these gaps. First, more information interactions are encouraged between the extracted features of the query and support images, i.e., using an Information Exchange Module to emphasize the common objects. Furthermore, to precisely localize the query objects, we design a multi-path finegrained strategy which is able to make better use of the support feature representations. Second, a new online refinement strategy is proposed to help the trained model adapt to unseen classes, achieved by switching the roles of the query and the support images at the inference stage. The effectiveness of our framework is demonstrated by experimental results, which outperforms other competitive methods and leads to a new state-of-the-art on both PASCAL VOC and MSCOCO dataset.
 
 # Summary. An optional shortened abstract.
-summary: 
+summary: We propose a framework, BriNet, to bridge these gaps. First, more information interactions are encouraged between the extracted features of the query and support images, i.e., using an Information Exchange Module to emphasize the common objects. Furthermore, to precisely localize the query objects, we design a multi-path finegrained strategy which is able to make better use of the support feature representations. Second, a new online refinement strategy is proposed to help the trained model adapt to unseen classes, achieved by switching the roles of the query and the support images at the inference stage.
 
 tags: []
 
