@@ -42,6 +42,27 @@ sections:
       username: admin
       # Override your bio text from `authors/admin/_index.md`?
       text:
+      items:
+        - title: Ph.D.
+          company: The University of Sydney
+          company_url: ''
+          company_logo: org-gc
+          location: Sydney
+          date_start: '2019-10-01'
+          date_end: 'Present'
+          # description: |2-
+          #     Responsibilities include:
+
+          #     * Analysing
+          #     * Modelling
+          #     * Deploying
+        - title: B.Sc
+          company: Nanjing University
+          company_url: ''
+          company_logo: org-x
+          location: Nanjing
+          date_start: '2015-09-01'
+          date_end: '2019-6-30'
   # - block: features
   #   content:
   #     title: Skills
