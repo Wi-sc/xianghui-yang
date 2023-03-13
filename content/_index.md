@@ -78,7 +78,7 @@ sections:
           company_logo: org-gc
           location: Sydney
           date_start: '2019-10-01'
-          date_end: 'Present'
+          date_end: ''
           description: |2-
               Responsibilities include:
 
