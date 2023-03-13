@@ -75,7 +75,7 @@ sections:
         - title: Ph.D.
           company: The University of Sydney
           company_url: ''
-          company_logo: the-university-of-sydney
+          company_logo: the-university-of-sydney_2
           location: Sydney
           date_start: '2019-10-01'
           date_end: ''
