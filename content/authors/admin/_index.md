@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Xianghui yang
+title: Xianghui Yang
 
 # Full name (for SEO)
 first_name: Xianghui
-last_name: yang
+last_name: Yang
 
 # Status emoji
 status:
@@ -38,7 +38,7 @@ education:
       year: 2023
     - course: BSc in Physics
       institution: Nanjing University
-      year: 2015
+      year: 2019
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -68,7 +68,7 @@ social:
   # and uncomment the lines below.
   - icon: cv
     icon_pack: ai
-    link: uploads/resume.pdf
+    link: uploads/CV_yxh_202303.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: 'xianghui.yang@sydney.edu.au'
