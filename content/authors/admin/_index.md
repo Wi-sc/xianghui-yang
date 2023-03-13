@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Xianghui yang
+title: Xianghui Yang
 
 # Full name (for SEO)
 first_name: Xianghui
-last_name: yang
+last_name: Yang
 
 # Status emoji
 status:
