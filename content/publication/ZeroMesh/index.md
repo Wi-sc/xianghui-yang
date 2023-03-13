@@ -1,7 +1,7 @@
 ---
 title: "ZeroMesh: Zero-shot Single-view 3D Mesh Reconstruction"
 authors:
-- Xianghui Yang
+- admin
 - Guosheng Lin
 - Luping Zhou
 author_notes:
