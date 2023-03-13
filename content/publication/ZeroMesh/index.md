@@ -4,7 +4,7 @@ authors:
 - Xianghui Yang
 - Guosheng Lin
 - Luping Zhou
-# author_notes:
+author_notes:
 # - "Equal contribution"
 # - "Equal contribution"
 date: "2015-09-01T00:00:00Z"
@@ -30,7 +30,7 @@ summary: We propose an end-to-end twostage network, ZeroMesh, to break the categ
 
 tags:
 - Single-view Reconstruction
-featured: false
+featured: true
 
 # links:
 # - name: ""
