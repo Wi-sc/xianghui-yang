@@ -75,24 +75,24 @@ sections:
         - title: Ph.D.
           company: The University of Sydney
           company_url: ''
-          company_logo: org-gc
+          company_logo: the-university-of-sydney
           location: Sydney
           date_start: '2019-10-01'
           date_end: ''
-          description: |2-
-              Responsibilities include:
+          # description: |2-
+          #     Responsibilities include:
 
-              * Analysing
-              * Modelling
-              * Deploying
+          #     * Analysing
+          #     * Modelling
+          #     * Deploying
         - title: B.Sc
           company: Nanjing University
           company_url: ''
-          company_logo: org-x
+          company_logo: nanjing-university
           location: Nanjing
           date_start: '2015-09-01'
           date_end: '2019-06-30'
-          description: Taught electronic engineering and researched semiconductor physics.
+          # description: Taught electronic engineering and researched semiconductor physics.
     design:
       columns: '2'
   # - block: accomplishments
