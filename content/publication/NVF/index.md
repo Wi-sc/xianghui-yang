@@ -46,8 +46,8 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: ''
-url_code: ''
+url_pdf: 'https://arxiv.org/abs/2303.04341'
+url_code: 'https://github.com/Wi-sc/NVF'
 url_dataset: ''
 url_poster: ''
 url_project: ''
