@@ -22,13 +22,14 @@ organizations:
     url: https://www.sydney.edu.au/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include Computer Vision, Deep Learning Generalization and 3D Reconstruction.
 
 # Interests to show in About widget
 interests:
   - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Computer Vision
+  - Deep Learning Generalization
+  - 3D Reconstruction
 
 # Education to show in About widget
 education:
@@ -80,5 +81,5 @@ email: 'xianghui.yang@sydney.edu.au'
 highlight_name: true
 ---
 
-Xianghui Yang a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of [Prof. Luping Zhou](https://www.sydney.edu.au/engineering/about/our-people/academic-staff/luping-zhou.html), [Prof. Guosheng Lin](https://guosheng.github.io/) and [Prof. Wanli Ouyang](https://wlouyang.github.io/). Before that, he received B.Sc. degree in Physiscs from the School of Physics, [Nanjing University](https://www.nju.edu.cn/EN/main.htm) in 2019.
-{style="text-align: justify;"}
+Xianghui Yang is a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of [Prof. Luping Zhou](https://www.sydney.edu.au/engineering/about/our-people/academic-staff/luping-zhou.html), [Prof. Guosheng Lin](https://guosheng.github.io/) and [Prof. Wanli Ouyang](https://wlouyang.github.io/). Before that, he received B.Sc. degree in Physiscs from the School of Physics, [Nanjing University](https://www.nju.edu.cn/EN/main.htm) in 2019.
+{style="text-align: justify;"}. His research interests include Computer Vision, Deep Learning Generalization and 3D Reconstruction.
