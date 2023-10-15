@@ -1,7 +1,10 @@
 ---
 title: "Neural Vector Fields: Generalizing Distance Vector Fields by Codebooks and Zero-Curl Regularization"
 authors:
-- admin
+  - admin
+  - Guosheng Lin
+  - Zhenghao Chen
+  - Luping Zhou
 date: "2023-08-07T00:00:00Z"
 doi: ""
 
@@ -33,12 +36,12 @@ links:
   url: https://arxiv.org/abs/2309.01512
 url_pdf: https://arxiv.org/abs/2309.01512
 url_code: ''
-url_dataset: '#'
-url_poster: '#'
+url_dataset: ''
+url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: '#'
-url_video: '#'
+url_source: ''
+url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
