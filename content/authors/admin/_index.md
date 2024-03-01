@@ -14,7 +14,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD candidate
+role: PhD
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -22,7 +22,7 @@ organizations:
     url: https://www.sydney.edu.au/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Generitive AI, 3D Reconstruction.
+bio: My research interests include AIGC, 3D Reconstruction, Model Generalization.
 
 # Interests to show in About widget
 interests:
@@ -80,5 +80,5 @@ email: 'xianghui.yang@sydney.edu.au'
 highlight_name: true
 ---
 
-Xianghui Yang a Ph.D. candidate in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin and Prof. Wanli Ouyang. Before that, he received B.Sc. degree in Physiscs from the School of Physics, Nanjing University in 2019.
+Xianghui Yang is a Ph.D. in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin and Prof. Wanli Ouyang. Before that, he received B.Sc. degree in Physiscs from the School of Physics, Nanjing University in 2019.
 {style="text-align: justify;"}
