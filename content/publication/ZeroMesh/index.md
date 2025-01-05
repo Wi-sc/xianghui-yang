@@ -30,7 +30,7 @@ summary: We propose an end-to-end twostage network, ZeroMesh, to break the categ
 
 tags:
 - Single-view Reconstruction
-featured: true
+featured: false
 
 # links:
 # - name: ""
