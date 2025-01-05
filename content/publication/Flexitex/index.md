@@ -47,7 +47,7 @@ url_pdf: https://arxiv.org/pdf/2409.12431
 url_code: ''
 url_dataset: ''
 url_poster: ''
-url_project: 'https://patrickddj.github.io/FlexiTex/'
+url_project: https://patrickddj.github.io/FlexiTex/
 url_slides: ''
 url_source: ''
 url_video: ''
