@@ -44,7 +44,7 @@ jobs:
         with:
           submodules: recursive
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           path: ./public  # Must match your build output directory
       - name: Setup Pages
