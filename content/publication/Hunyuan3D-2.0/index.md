@@ -1,7 +1,6 @@
 ---
 title: "Hunyuan3D-2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation"
 authors:
-
 - Zibo Zhao
 - Zeqiang Lai
 - Qingxiang Lin

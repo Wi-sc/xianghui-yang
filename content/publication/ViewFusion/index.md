@@ -42,7 +42,7 @@ summary: Novel-view Generation, 3D Generation, Diffusion Model
 tags: [Novel-view Generation, 3D Generation, Diffusion Model]
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
