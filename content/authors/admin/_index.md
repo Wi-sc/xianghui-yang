@@ -22,13 +22,14 @@ organizations:
     url: https://www.sydney.edu.au/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include AIGC, 3D Reconstruction, Model Generalization.
+bio: My research interests include Foundation Models, Large-Scale AI, Multimodal Learning, and 3D Vision.
 
 # Interests to show in About widget
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Foundation Models
+  - Large-scale AI
+  - Multimodal Learning
+  - 3D Vision
 
 # Education to show in About widget
 education:
@@ -80,5 +81,5 @@ email: 'xianghui.yang@sydney.edu.au'
 highlight_name: true
 ---
 
-Xianghui Yang is a Ph.D. in the School of Electrical & Information Engineering, The University of Sydney, where he works at the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin and Prof. Wanli Ouyang. Before that, he received B.Sc. degree in Physiscs from the School of Physics, Nanjing University in 2019.
+Xianghui Yang is a Senior Research Engineer at Tencent. He earned his Ph.D. from the School of Electrical & Information Engineering at The University of Sydney, where he was affiliated with the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin, and Prof. Wanli Ouyang. Prior to his doctoral studies, he received his B.Sc. in Physics from the School of Physics, Nanjing University in 2019. His research focuses on Foundation Models, Large-Scale AI, Multimodal Learning, and 3D Vision.
 {style="text-align: justify;"}

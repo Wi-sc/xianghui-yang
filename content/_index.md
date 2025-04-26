@@ -72,13 +72,20 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Senior Research Engineer
+          company: Tencent
+          company_url: ''
+          company_logo: Tencent_Logo
+          location: Shenzhen
+          date_start: '2024-5-25'
+          date_end: ''
         - title: Ph.D.
           company: The University of Sydney
           company_url: ''
           company_logo: the-university-of-sydney
           location: Sydney
           date_start: '2019-10-01'
-          date_end: ''
+          date_end: '2024-02-01'
           # description: |2-
           #     Responsibilities include:
 
