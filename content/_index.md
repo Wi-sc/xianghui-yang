@@ -77,7 +77,7 @@ sections:
           company_url: ''
           company_logo: Tencent_Logo
           location: Shenzhen
-          date_start: '2024-5-25'
+          date_start: '2024-05-25'
           date_end: ''
         - title: Ph.D.
           company: The University of Sydney
