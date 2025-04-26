@@ -1,6 +1,5 @@
 ---
-title: "Tencent Hunyuan3D-1.0: A Unified Framework for Text-to-3D and
-Image-to-3D Generation"
+title: "Hunyuan3D-1.0: A Unified Framework for Text-to-3D and Image-to-3D Generation"
 authors:
 
 - admin*
