@@ -14,12 +14,12 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: PhD
+role: Ph.D.
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: The University of Sydney
-    url: https://www.sydney.edu.au/
+  - name: Tencent
+    url: https://www.tencent.com/en-us/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include Foundation Models, Large-Scale AI, Multimodal Learning, and 3D Vision.
@@ -75,11 +75,11 @@ social:
     link: uploads/CV.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: 'xianghui.yang@sydney.edu.au'
+email: 'yangxhui6@gmail.com'
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Xianghui Yang is a Senior Research Engineer at Tencent. He earned his Ph.D. from the School of Electrical & Information Engineering at The University of Sydney, where he was affiliated with the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin, and Prof. Wanli Ouyang. Prior to his doctoral studies, he received his B.Sc. in Physics from the School of Physics, Nanjing University in 2019. His research focuses on Foundation Models, Large-Scale AI, Multimodal Learning, and 3D Vision.
+Xianghui Yang is a Senior Research Scientist at Tencent. He earned his Ph.D. from the School of Electrical & Information Engineering at The University of Sydney, where he was affiliated with the USYD-Vision Lab under the supervision of Prof. Luping Zhou, Prof. Guosheng Lin, and Prof. Wanli Ouyang. Prior to his doctoral studies, he received his B.Sc. in Physics from the School of Physics, Nanjing University in 2019. His research focuses on Foundation Models, Large-Scale AI, Multimodal Learning, and 3D Vision.
 {style="text-align: justify;"}
