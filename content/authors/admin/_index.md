@@ -49,7 +49,7 @@ social:
   - icon: envelope
     icon_pack: fas
     # link: '/#contact'
-    link: 'mailto:xianghui.yang@sydney.edu.au'
+    link: 'mailto:yangxhui6@gmail.com'
   # - icon: twitter
   #   icon_pack: fab
   #   link: https://twitter.com/GeorgeCushen
