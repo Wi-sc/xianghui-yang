@@ -289,10 +289,14 @@ const typeBadge: Record<Paper['type'], { label: string; cls: string }> = {
   preprint: { label: 'PREPRINT', cls: 'text-term-cyan border-term-cyan/25 bg-term-cyan/10' },
 }
 
+// "Selected" = the Hunyuan3D / HY3D technical-report series (Hunyuan3D-1.0 → HY3D-Bench).
+function isTechReport(p: Paper) {
+  return p.type === 'preprint' && /hunyuan|hy3d/i.test(p.title)
+}
+
 function PaperRow({ p, idx, total }: { p: Paper; idx: number; total: number }) {
   const [showBib, setShowBib] = useState(false)
-  // Hunyuan preprints are released as technical reports — label them accordingly.
-  const isReport = p.type === 'preprint' && /hunyuan/i.test(p.title)
+  const isReport = isTechReport(p)
   const venueLabel = isReport ? 'Tech Report' : p.venue
   const badge = isReport
     ? { label: 'TECH REPORT', cls: 'text-term-amber border-term-amber/25 bg-term-amber/10' }
@@ -410,7 +414,11 @@ export default function App() {
   }, [termOpen])
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  const shown = useMemo(() => (filter === 'all' ? papers : papers.filter((p) => p.highlight)), [filter])
+  const shown = useMemo(() => {
+    const list = filter === 'all' ? papers : papers.filter((p) => p.highlight)
+    // stable sort by year (newest first); same-year items keep their data.ts order
+    return [...list].sort((a, b) => b.year - a.year)
+  }, [filter])
 
   return (
     <div className="grid-bg relative min-h-screen">
@@ -548,7 +556,7 @@ export default function App() {
                 I am a Senior Research Scientist at <span className="text-term-text">Tencent</span>, where I lead research on 3D content
                 generation. I am the <span className="text-term-text">first author and core contributor</span> of the{' '}
                 <a href="http://3d-models.hunyuan.tencent.com/" target="_blank" rel="noopener" className="fancy-link text-term-green">Hunyuan3D</a>{' '}
-                series — Tencent's flagship 3D generation system with <span className="text-term-text">800+ citations</span>. I earned my
+                series — Tencent's flagship 3D generation system with <span className="text-term-text">900+ citations</span>. I earned my
                 Ph.D. from <span className="text-term-text">The University of Sydney</span> and my B.Sc. in Physics from{' '}
                 <span className="text-term-text">Nanjing University</span>. I care about building 3D systems that are both{' '}
                 <em className="not-italic text-term-text">geometrically principled</em> and{' '}
@@ -573,51 +581,6 @@ export default function App() {
                   <span className="font-light leading-relaxed text-term-text/85">{n.text}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ============ RESEARCH ============ */}
-        <section id="research" className="mb-24 reveal">
-          <SectionTitle cmd="./list --topics" label="research interests" />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {research.map((r, i) => (
-              <div key={r.title} className="group relative overflow-hidden rounded-xl border border-term-border bg-term-surface/40 p-5 transition-all hover:-translate-y-0.5 hover:border-term-green/50 hover:bg-term-surface/80">
-                <div className="absolute left-4 top-3 font-mono text-[10px] text-term-muted/50">0{i + 1}</div>
-                <div className="mb-2 mt-3 flex items-center justify-between">
-                  <h3 className="text-[15px] font-medium text-term-text">{r.title}</h3>
-                  <span className="rounded border border-term-cyan/20 bg-term-cyan/10 px-1.5 py-0.5 font-mono text-[10px] text-term-cyan">{r.tag}</span>
-                </div>
-                <p className="text-sm font-light leading-relaxed text-term-muted">{r.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ============ PUBLICATIONS ============ */}
-        <section id="publications" className="mb-24 reveal">
-          <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
-            <SectionTitle cmd="ls -lh ~/papers/*.bib" label="publications" />
-          </div>
-          <div className="mb-5 flex items-center gap-1 overflow-hidden rounded-md border border-term-border font-mono text-[11px]">
-            <button onClick={() => setFilter('all')} className={`px-3 py-1.5 transition-colors ${filter === 'all' ? 'bg-term-green/10 text-term-green' : 'text-term-muted hover:text-term-text'}`}>
-              all ({papers.length})
-            </button>
-            <button onClick={() => setFilter('selected')} className={`px-3 py-1.5 transition-colors ${filter === 'selected' ? 'bg-term-green/10 text-term-green' : 'text-term-muted hover:text-term-text'}`}>
-              selected ({papers.filter((p) => p.highlight).length})
-            </button>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border border-term-border bg-term-surface/30">
-            <div className="grid grid-cols-[58px_1fr] gap-4 border-b border-term-border bg-term-bg/50 px-4 py-2.5 font-mono text-[10px] uppercase tracking-wider text-term-muted sm:grid-cols-[58px_1fr_auto]">
-              <span>year</span><span>title · authors</span><span className="hidden sm:block">links</span>
-            </div>
-            <div className="px-4">
-              {shown.map((p, i) => <PaperRow key={p.title} p={p} idx={i} total={shown.length} />)}
-            </div>
-            <div className="flex items-center justify-between border-t border-term-border bg-term-bg/50 px-4 py-2.5 font-mono text-[10px] text-term-muted">
-              <span>* denotes equal contribution</span>
-              <span>{shown.length} entries · sorted by recency</span>
             </div>
           </div>
         </section>
@@ -675,6 +638,51 @@ export default function App() {
               </p>
             </div>
           </aside>
+        </section>
+
+        {/* ============ RESEARCH ============ */}
+        <section id="research" className="mb-24 reveal">
+          <SectionTitle cmd="./list --topics" label="research interests" />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {research.map((r, i) => (
+              <div key={r.title} className="group relative overflow-hidden rounded-xl border border-term-border bg-term-surface/40 p-5 transition-all hover:-translate-y-0.5 hover:border-term-green/50 hover:bg-term-surface/80">
+                <div className="absolute left-4 top-3 font-mono text-[10px] text-term-muted/50">0{i + 1}</div>
+                <div className="mb-2 mt-3 flex items-center justify-between">
+                  <h3 className="text-[15px] font-medium text-term-text">{r.title}</h3>
+                  <span className="rounded border border-term-cyan/20 bg-term-cyan/10 px-1.5 py-0.5 font-mono text-[10px] text-term-cyan">{r.tag}</span>
+                </div>
+                <p className="text-sm font-light leading-relaxed text-term-muted">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ============ PUBLICATIONS ============ */}
+        <section id="publications" className="mb-24 reveal">
+          <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
+            <SectionTitle cmd="ls -lh ~/papers/*.bib" label="publications" />
+          </div>
+          <div className="mb-5 flex items-center gap-1 overflow-hidden rounded-md border border-term-border font-mono text-[11px]">
+            <button onClick={() => setFilter('all')} className={`px-3 py-1.5 transition-colors ${filter === 'all' ? 'bg-term-green/10 text-term-green' : 'text-term-muted hover:text-term-text'}`}>
+              all ({papers.length})
+            </button>
+            <button onClick={() => setFilter('selected')} className={`px-3 py-1.5 transition-colors ${filter === 'selected' ? 'bg-term-green/10 text-term-green' : 'text-term-muted hover:text-term-text'}`}>
+              selected ({papers.filter((p) => p.highlight).length})
+            </button>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border border-term-border bg-term-surface/30">
+            <div className="grid grid-cols-[58px_1fr] gap-4 border-b border-term-border bg-term-bg/50 px-4 py-2.5 font-mono text-[10px] uppercase tracking-wider text-term-muted sm:grid-cols-[58px_1fr_auto]">
+              <span>year</span><span>title · authors</span><span className="hidden sm:block">links</span>
+            </div>
+            <div className="px-4">
+              {shown.map((p, i) => <PaperRow key={p.title} p={p} idx={i} total={shown.length} />)}
+            </div>
+            <div className="flex items-center justify-between border-t border-term-border bg-term-bg/50 px-4 py-2.5 font-mono text-[10px] text-term-muted">
+              <span>* denotes equal contribution</span>
+              <span>{shown.length} entries · sorted by recency</span>
+            </div>
+          </div>
         </section>
 
         {/* ============ CONTACT ============ */}
