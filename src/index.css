@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-term-bg text-term-text font-sans;
+    background-image:
+      radial-gradient(circle at 18% -2%, rgba(16, 185, 129, 0.07), transparent 42%),
+      radial-gradient(circle at 85% 8%, rgba(34, 211, 238, 0.05), transparent 40%),
+      radial-gradient(circle at 60% 100%, rgba(167, 139, 250, 0.045), transparent 45%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.25);
+    color: #fff;
+  }
+  /* offset for sticky header when jumping to anchors */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Subtle dotted/line grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: #1f1f23; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #2a2a30; }
+
+/* Animated underline link */
+.fancy-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.fancy-link:hover { background-size: 100% 1px; }
+
+/* Tiny glitch on hover */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+.glitch:hover { animation: glitch 0.3s linear; }
+.animate-glitch { animation: glitch 0.4s linear; }
+
+/* Faint film noise overlay */
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  z-index: 100;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reveal-on-scroll helper */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}

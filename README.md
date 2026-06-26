@@ -1,50 +1,63 @@
-# [Hugo Academic Theme](https://github.com/wowchemy/starter-hugo-academic)
+# Xianghui (Sean) Yang — Personal Homepage
 
-[![Screenshot](./preview.png)](https://wowchemy.com/hugo-themes/)
+A fast, single-page personal homepage for a computer-vision researcher, built as a
+terminal / geek-themed SPA. Designed to be information-dense, minimal, and a little
+playful — with a few easter eggs for fellow hackers.
 
-The Hugo **Academic Resumé Template** empowers you to easily create your job-winning online resumé, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+> Senior Research Scientist @ Tencent · First author of **Hunyuan3D** · 3D Generation · Foundation Models · Computer Vision
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://wowchemy.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/wowchemy?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+## Tech Stack
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+- **React 18** + **TypeScript**
+- **Vite 5** (build / dev server)
+- **Tailwind CSS 3**
+- Zero runtime dependencies beyond React — no UI kit, no tracker, no cookies.
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## Sections
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://wowchemy.com/creators/).
+`about` · `research interests` · `publications` (22 papers, filterable) · `education` · `experience` · `tech stack` · `contact`
 
-The integrated [**Wowchemy**](https://wowchemy.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+## Easter Eggs
 
-- 👉 [**Get Started**](https://wowchemy.com/hugo-themes/)
-- 📚 [View the **documentation**](https://wowchemy.com/docs/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- ⬇️ **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/wowchemy/hugo-academic-cli)
-- 💡 [Suggest an improvement](https://github.com/wowchemy/wowchemy-hugo-themes/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://wowchemy.com/docs/hugo-tutorials/update/) and [Release Notes](https://github.com/wowchemy/wowchemy-hugo-themes/releases)
+| Trigger | Effect |
+| --- | --- |
+| `` ` `` or `⌘K` / `Ctrl+K` | Open the interactive terminal (try `help`, `whoami`, `neofetch`, `coffee`, `hunyuan`, `sudo`, `42`) |
+| `m` | Toggle Matrix rain |
+| `↑ ↑ ↓ ↓ ← → ← → b a` | Konami code |
+| `↑` / `↓` in terminal | Command history |
 
-## We ask you, humbly, to support this open source movement
+## Local Development
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+```bash
+npm install
+npm run dev      # http://localhost:5173/xianghui-yang/
+```
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+## Build
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
+```bash
+npm run build    # outputs to ./dist
+npm run preview  # preview the production build
+```
 
-<p align="center"><a href="https://wowchemy.com/templates/" target="_blank" rel="noopener"><img src="https://wowchemy.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Wowchemy Website Builder"></a></p>
+## Deployment
 
-## Demo image credits
+Hosted on **GitHub Pages** as a project site at **https://wi-sc.github.io/xianghui-yang/**
+(repository: `xianghui-yang`). Every push to the default branch triggers the
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) workflow, which builds the
+site with Vite and publishes `./dist`.
 
-- [Open book](https://unsplash.com/photos/J4kK8b9Fgj8)
-- [Course](https://unsplash.com/photos/JKUTrJ4vK00)
+Because a project site is served from `/<repo-name>/`, the Vite `base` is set to
+`/xianghui-yang/` in `vite.config.ts`. If you rename the repo, update `base` to match.
 
-## Latest news
+> One-time setup: in the repository **Settings → Pages**, set **Source** to **GitHub Actions**.
 
-<!--START_SECTION:news-->
-* [Easily make an academic CV website to get more cites and grow your audience 🚀](https:&#x2F;&#x2F;wowchemy.com&#x2F;blog&#x2F;easily-make-academic-website&#x2F;)
-* [What&#39;s new in v5.2?](https:&#x2F;&#x2F;wowchemy.com&#x2F;blog&#x2F;whats-new-in-v5.2&#x2F;)
-* [What&#39;s new in v5.1?](https:&#x2F;&#x2F;wowchemy.com&#x2F;blog&#x2F;whats-new-in-v5.1&#x2F;)
-* [Version 5.0 (February 2021)](https:&#x2F;&#x2F;wowchemy.com&#x2F;blog&#x2F;version-5.0-february-2021&#x2F;)
-* [Version 5.0 Beta 3 (February 2021)](https:&#x2F;&#x2F;wowchemy.com&#x2F;blog&#x2F;version-5.0-beta-3-february-2021&#x2F;)
-<!--END_SECTION:news-->
+## Editing Content
+
+All content lives in [`src/data.ts`](src/data.ts) — profile, links, research interests,
+education, experience, publications, news, and the tech stack. No need to touch the
+layout to update your CV.
+
+- Replace `public/matri_profile.png` with your photo, then run `node scripts/ascii.mjs` to
+  regenerate the ASCII portrait.
+- Replace `public/CV.pdf` with your CV.
