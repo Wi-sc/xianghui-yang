@@ -2,90 +2,238 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
 @layer base {
+  :root {
+    /* Vertical rhythm: every section gap is a multiple of this. */
+    --rhythm: 8px;
+  }
+
   html {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    /* Inter's stylistic sets: single-storey a, disambiguated 1/l/I,
+       and open digits. This is what makes Inter look intentional. */
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01', 'ss03';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    /* Prevent iOS from inflating type in landscape. */
+    -webkit-text-size-adjust: 100%;
   }
+
   body {
-    @apply bg-term-bg text-term-text font-sans;
+    @apply bg-ink-950 text-ink-200 font-sans antialiased;
+    /* A single, very cold light source from the top-left — one lamp, not
+       three. Three competing gradients read as mud; one reads as depth. */
     background-image:
-      radial-gradient(circle at 18% -2%, rgba(16, 185, 129, 0.07), transparent 42%),
-      radial-gradient(circle at 85% 8%, rgba(34, 211, 238, 0.05), transparent 40%),
-      radial-gradient(circle at 60% 100%, rgba(167, 139, 250, 0.045), transparent 45%);
+      radial-gradient(105ch 70ch at 12% -12%, rgba(52, 211, 153, 0.055), transparent 68%),
+      radial-gradient(90ch 60ch at 88% 4%, rgba(148, 163, 184, 0.035), transparent 62%);
     background-attachment: fixed;
+    background-repeat: no-repeat;
   }
+
+  /* Numerals are tabular *everywhere* by default. Dates, counts and
+     indices must never shimmer as they change. */
+  time,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
   ::selection {
-    background-color: rgba(16, 185, 129, 0.25);
+    background-color: rgba(52, 211, 153, 0.22);
     color: #fff;
   }
-  /* offset for sticky header when jumping to anchors */
+
   section[id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 6rem;
+  }
+
+  /* ── Focus: visible, consistent, keyboard-only ──────────────────────── */
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Headings must never be orphaned or hyphen-broken. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }
 
-/* Subtle dotted/line grid background */
-.grid-bg {
+/* ==========================================================================
+   MATERIALS
+   ========================================================================== */
+
+/* The one panel material used site-wide. A hairline top highlight makes an
+   edge catch the light, which is what separates a surface from a rectangle. */
+.panel {
+  @apply rounded-lg border border-ink-700 bg-ink-850/70 shadow-panel;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.022), transparent 40%);
+}
+
+/* Structural rule. One weight, one color, everywhere. */
+.rule {
+  @apply border-ink-700;
+}
+
+/* Background grid — barely-there, and it must not tile visibly at the
+   viewport edges, so it fades out vertically. */
+.grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
-  background-size: 42px 42px;
+    linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 88%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 88%);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0a0a0b; }
-::-webkit-scrollbar-thumb { background: #1f1f23; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #2a2a30; }
-
-/* Animated underline link */
-.fancy-link {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 0.3s ease;
-}
-.fancy-link:hover { background-size: 100% 1px; }
-
-/* Tiny glitch on hover */
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-1px, 1px); }
-  40% { transform: translate(-1px, -1px); }
-  60% { transform: translate(1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0); }
-}
-.glitch:hover { animation: glitch 0.3s linear; }
-.animate-glitch { animation: glitch 0.4s linear; }
-
-/* Faint film noise overlay */
-.noise {
+/* Film grain. At 0.025 over a #0a0a0b field the earlier version was pure
+   noise-for-noise's-sake; dropped and coarsened so it reads as texture. */
+.grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.025;
   z-index: 100;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Reveal-on-scroll helper */
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+/* Small-caps-style label. Uppercase micro-type needs generous tracking or
+   it turns into a smear. */
+.label {
+  @apply font-mono text-3xs uppercase text-ink-400;
+}
+
+/* ==========================================================================
+   INTERACTION
+   ========================================================================== */
+
+/* Underline that grows from the leading edge. Sits below the baseline and
+   clears descenders, which a border-bottom cannot do. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 calc(100% - 1px);
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Persistent underline that retracts on hover — used for dense link rows,
+   where a growing underline would feel noisy. */
+.link-quiet {
+  @apply border-b border-ink-600 text-ink-400 transition-colors duration-200;
+}
+.link-quiet:hover,
+.link-quiet:focus-visible {
+  @apply border-accent/60 text-accent;
+}
+
+/* ==========================================================================
+   MOTION
+   ========================================================================== */
+
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(10px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
+/* Honour the OS setting. Non-negotiable. */
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #282832 transparent;
+}
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c24;
+  border: 3px solid transparent;
+  border-radius: 99px;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #282832;
+  background-clip: content-box;
+}
+
+/* ==========================================================================
+   PRINT — a researcher's page will be printed. It should not print black.
+   ========================================================================== */
+
+@media print {
+  .grain,
+  .grid-bg::before,
+  header,
+  footer {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    background-image: none !important;
+  }
+  .panel {
+    border-color: #ddd !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
 }

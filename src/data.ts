@@ -27,16 +27,9 @@ export const socials: { label: string; handle: string; href: string; key: string
   { label: 'CV', handle: 'pdf', href: `${BASE}CV.pdf`, key: 'cv' },
 ]
 
-// Quick-stat rows for the terminal status panel
-export const stats: { label: string; value: string }[] = [
-  { label: 'role', value: 'Sr. Research Scientist' },
-  { label: 'org', value: 'Tencent Hunyuan' },
-  { label: 'papers', value: '22' },
-  { label: 'citations', value: '900+' },
-  { label: 'focus', value: '3D Generation' },
-  { label: 'now', value: 'scaling Hunyuan3D' },
-]
-
+// Quick-stat rows for the terminal status panel. Defined after `papers` so
+// the paper count can be derived from the source of truth rather than
+// maintained by hand.
 export const research: { title: string; desc: string; tag: string }[] = [
   {
     title: '3D Generation',
@@ -332,6 +325,17 @@ export const papers: Paper[] = [
     tags: ['first-author'],
     links: [{ label: 'pdf', href: 'https://arxiv.org/abs/2008.06226' }, { label: 'code', href: 'https://github.com/Wi-sc/BriNet.git' }, { label: 'video', href: 'https://www.youtube.com/watch?v=9EaT6ZCtcqk&t=6s' }],
   },
+]
+
+// Quick-stat rows for the terminal status panel. The paper count is derived
+// from `papers.length` so it can never drift out of sync with the list above.
+export const stats: { label: string; value: string }[] = [
+  { label: 'role', value: 'Sr. Research Scientist' },
+  { label: 'org', value: 'Tencent Hunyuan' },
+  { label: 'papers', value: String(papers.length) },
+  { label: 'citations', value: '1000+' },
+  { label: 'focus', value: '3D Generation' },
+  { label: 'now', value: 'scaling Hunyuan3D' },
 ]
 
 export const news: { date: string; text: string }[] = [

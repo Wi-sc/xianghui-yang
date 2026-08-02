@@ -17,14 +17,49 @@ playful — with a few easter eggs for fellow hackers.
 
 `about` · `research interests` · `publications` (22 papers, filterable) · `education` · `experience` · `tech stack` · `contact`
 
+## The terminal
+
+Press `` ` `` or `⌘K` / `Ctrl+K`. It is a real (if small) POSIX-flavoured shell
+backed by a virtual filesystem in [`src/shell.ts`](src/shell.ts), generated from
+`data.ts` — so the shell can never disagree with the page.
+
+```bash
+ls                    # about.md  publications/  research/  projects/  cv.pdf …
+cd research && ls     # paths, .. and ~ all resolve
+cat about.md          # any file
+cat papers.bib        # all 22 entries as BibTeX
+tree                  # the whole filesystem
+open cv.pdf           # symlinks open in a new tab
+grep hunyuan          # search titles, authors and venues
+find mesh             # locate files by name
+echo $MOTTO           # env vars: USER, EMAIL, ROLE, ORG, MOTTO …
+ls -l                 # flags are parsed
+```
+
+`Tab` completes commands **and** paths (longest common prefix, listing
+ambiguous matches). `↑`/`↓` walks history, `^L` clears, `^C` cancels.
+Bare nouns such as `papers` are deliberately *not* commands — they answer with
+`command not found` plus the correct form, e.g. `Did you mean: cat papers.bib`.
+
+## Window controls
+
+The red/amber/green dots are functional, not decorative:
+
+| | Title bar | Terminal |
+| --- | --- | --- |
+| ● red | hide the bar (a "reopen" pill appears) | close |
+| ● amber | collapse to a slim bar | collapse to the title bar |
+| ● green | native fullscreen | enlarge / restore |
+
+Double-clicking the terminal's title bar also zooms it.
+
 ## Easter Eggs
 
 | Trigger | Effect |
 | --- | --- |
-| `` ` `` or `⌘K` / `Ctrl+K` | Open the interactive terminal (try `help`, `whoami`, `neofetch`, `coffee`, `hunyuan`, `sudo`, `42`) |
 | `m` | Toggle Matrix rain |
-| `↑ ↑ ↓ ↓ ← → ← → b a` | Konami code |
-| `↑` / `↓` in terminal | Command history |
+| `↑ ↑ ↓ ↓ ← → ← → b a` | Konami code — the sequence is printed in the footer status bar and lights up once entered |
+| `sudo`, `42` | try them |
 
 ## Local Development
 
