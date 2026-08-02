@@ -14,7 +14,10 @@ export const profile = {
   affiliation: 'Tencent Hunyuan',
   tagline: 'Turning pixels and words into high-fidelity 3D worlds.',
   email: 'yangxhui6@gmail.com',
+  // 512px WebP is the real payload (~15 KB); the 1024px PNG stays as a
+  // fallback for the handful of engines without WebP support (~1.2 MB).
   avatar: `${BASE}matri_profile.png`,
+  avatarWebp: `${BASE}matri_profile.webp`,
   cv: `${BASE}CV.pdf`,
   status: 'open to collaboration',
 }

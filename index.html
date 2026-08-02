@@ -11,6 +11,16 @@
     <meta property="og:description" content="Senior Research Scientist @ Tencent · First author of Hunyuan3D · 3D Generation, Foundation Models, Computer Vision." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
+    <!-- The avatar is above the fold, but React only discovers the <img> after
+         the JS bundle has parsed and rendered. Preloading it here starts the
+         fetch alongside the bundle instead of after it. -->
+    <link
+      rel="preload"
+      as="image"
+      href="%BASE_URL%matri_profile.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />

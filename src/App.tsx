@@ -838,15 +838,19 @@ export default function App() {
                     {asciiPortrait}
                   </pre>
                 ) : (
-                  <img
-                    src={profile.avatar}
-                    alt={profile.name}
-                    width={512}
-                    height={512}
-                    className="aspect-square w-full object-cover saturate-[0.85] transition-[filter] duration-700 hover:saturate-100"
-                    loading="eager"
-                    decoding="async"
-                  />
+                  <picture>
+                    <source srcSet={profile.avatarWebp} type="image/webp" />
+                    <img
+                      src={profile.avatar}
+                      alt={profile.name}
+                      width={512}
+                      height={512}
+                      className="aspect-square w-full object-cover saturate-[0.85] transition-[filter] duration-700 hover:saturate-100"
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority="high"
+                    />
+                  </picture>
                 )}
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-inset ring-ink-100/10" />
               </div>
