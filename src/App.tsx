@@ -790,7 +790,7 @@ export default function App() {
                 Hunyuan3D
               </a>{' '}
               series — Tencent’s flagship 3D generation system with{' '}
-              <strong className="font-medium text-ink-100">900+ citations</strong>. I earned my Ph.D. from{' '}
+              <strong className="font-medium text-ink-100">1000+ citations</strong>. I earned my Ph.D. from{' '}
               <span className="text-ink-200">The University of Sydney</span> and my B.Sc. in Physics from{' '}
               <span className="text-ink-200">Nanjing University</span>. I care about building 3D systems that are both
               geometrically principled and production-ready.
